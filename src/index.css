@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #FCFBF8;
+  --ink: #17140E;
+  --stone: #6B655A;
+  --gold: #D1C4A9;
+  --gold-light: #EAE3D3;
+  --bronze: #7A6B47;
+  --bronze-dark: #5E5135;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus visible ring in bronze */
+:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+}
+
+/* Scroll animation classes */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up-delay-1 { transition-delay: 0.1s; }
+.fade-up-delay-2 { transition-delay: 0.2s; }
+.fade-up-delay-3 { transition-delay: 0.3s; }
+.fade-up-delay-4 { transition-delay: 0.4s; }
+
+/* Grid pattern texture */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(209, 196, 169, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(209, 196, 169, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Nav transition */
+.nav-scrolled {
+  background-color: var(--paper);
+  box-shadow: 0 1px 0 rgba(122, 107, 71, 0.12);
+}
